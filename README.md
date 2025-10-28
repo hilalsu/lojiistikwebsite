@@ -111,18 +111,6 @@ ruff check .         # linter (Python ör.)
 npm run lint
 npm run test
 ```
-
----
-
-## Testler
-- Birim testler: küçük ve izole senaryoları kapsar
-- Entegrasyon testleri: modüller arası etkileşimi doğrular
-- Gerekirse uçtan uca (E2E) testler ekleyin
-
-> PR açmadan önce tüm testlerin geçtiğinden emin olun.
-
----
-
 ## Build/Dağıtım
 - Frontend: `npm run build` çıktısı genellikle `dist/` klasörüne düşer.
 - Backend: üretim yapılandırması için ortam değişkenlerini güncelleyin, veritabanı migrasyonlarını çalıştırın.
@@ -136,65 +124,7 @@ npm run test
 - Hata düzeltme: `fix/<kısa-başlık>`
 - Yayın hazırlığı: `release/<sürüm>`
 
-Commit mesaj formatı (öneri):
-```
-<tür>: <kısa açıklama>
 
-[gerekirse detaylı açıklama]
-[ilgili iş/bug referansı]
-```
-Örnek türler: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`, `perf`, `build`.
 
-Örnek:
-```
-feat: sevkiyat listesinde gelişmiş filtreleme
 
-- tarih aralığı ve durum bazlı filtre eklendi
-- API parametreleri güncellendi
-```
 
-PR kontrol listesi (öneri):
-- [ ] Testler geçiyor
-- [ ] Linter/format uyarısı yok
-- [ ] Gerekliyse dokümantasyon güncellendi
-- [ ] Büyük değişikliklerde migrasyon talimatları eklendi
-
----
-
-## Git ile bu projeyi uzağa yükleme (push)
-Aşağıdaki komutlar yeni bir Git deposu başlatıp GitHub/GitLab/Bitbucket gibi uzak depoya yüklemeyi gösterir.
-```bash
-# Proje kökünde çalıştırın
-cd C:\Users\hilal\Desktop\project\lojistik
-
-# Eğer repo henüz git değilse başlatın
-git init
-
-# Ana branch'i main yapın (gerekirse)
-git branch -M main
-
-# Dosyaları ekleyin ve ilk commit'i oluşturun
-git add .
-git commit -m "docs: README eklendi ve proje açıklamaları"
-
-# Uzak depoyu ekleyin (URL'yi değiştirin)
-git remote add origin <UZAK_REPO_URL>
-
-# İlk push
-git push -u origin main
-```
-İpuçları:
-- `.env` gibi gizli dosyaları `.gitignore` ile hariç tutun.
-- Büyük dosyalar için (örn. medya), gerekiyorsa Git LFS kullanın.
-
----
-
-## SSS
-- S: Komutlar birebir çalışmıyor.
-  - C: Proje teknoloji yığınına göre komutları uyarlayın (örn. Django/Flask, React/Vue). Gerekirse `README.md`yi güncelleyin.
-- S: `.env` nerede?
-  - C: `backend/.env` ve/veya `frontend/.env`. Üretim değerlerini gizli tutun.
-
----
-
-Geri bildirim ve iyileştirme önerileri için PR veya Issue açabilirsiniz.
